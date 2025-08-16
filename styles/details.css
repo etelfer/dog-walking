@@ -1,0 +1,53 @@
+.details {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.detail--column {
+    flex-basis: 24%;
+    margin: 0 2rem;
+    border: 1px dotted goldenrod;
+}
+
+.assignments {
+    padding: 1rem 5rem;
+}
+
+.details__cities h2 {
+    text-align: left;
+}
+
+.details__walkers h2 {
+    text-align: left;
+}
+
+.details__pets h2 {
+    text-align: left;
+}
+
+.details__cities {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    gap: 20px;
+    padding: 20px;
+    max-width: 200px;
+}
+
+.details__walkers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    max-width: 200px;
+}
+
+.details__pets {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    gap: 20px;
+    padding: 20px;
+    max-width: 200px;
+}
+
