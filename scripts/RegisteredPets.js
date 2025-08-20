@@ -10,8 +10,9 @@ export const RegisteredPets = () => {
 
     for (const pet of pets) {
         petHTML += `<li
-                    data_id="${pet.id}"
-                    data_walkerId="${pet.walkerId}"
+                    data-id="${pet.id}"
+                    data-walkerId="${pet.walkerId}"
+                    data-walkerForeignKey="${pet.walkerId}"
                     >${pet.name}</li>`
     }
 
