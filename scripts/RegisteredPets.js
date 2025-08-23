@@ -7,7 +7,7 @@ document.addEventListener(
     (eventAttachedToClick) => {
     const thingClickedOn = eventAttachedToClick.target
 
-    const walkerId = thingClickedOn.dataset.walkerForeignKey
+    const walkerId = thingClickedOn.dataset.walkerforeignkey
     
 
     const allWalkers = getWalkers()
