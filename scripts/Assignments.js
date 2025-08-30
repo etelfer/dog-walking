@@ -1,8 +1,9 @@
-import { getPets, getWalkers } from "./database.js"
+import { getPets, getCities, getWalkers } from "./database.js"
 
 // Get copy of state for use in this module
 const pets = getPets()
 const walkers = getWalkers()
+const cities = getCities()
 
 
 // Function whose responsibility is to find the walker assigned to a pet
@@ -18,6 +19,18 @@ const findWalker = (pet, walkers) => {
     return petWalker
 }
 
+const findCity = (walker, cities) => {
+    let walkerCity = null
+
+    for (const city of cities) {
+        if (city.id === walker.cityId) {
+            walkerCity = city
+        }
+    }
+
+    return walkerCity
+}
+
 export const Assignments = () => {
     let assignmentHTML = ""
 
@@ -25,10 +38,11 @@ export const Assignments = () => {
 
     for (const currentPet of pets) {
         const currentPetWalker = findWalker(currentPet, walkers)
+        const assignedCity = findCity(currentPetWalker, cities)
         assignmentHTML += `
             <li>
                 ${currentPet.name} is being walked by
-                ${currentPetWalker.name} in ${currentPetWalker.city}
+                ${currentPetWalker.name} in ${assignedCity.name}
             </li>
         `
     }
